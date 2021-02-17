@@ -1,4 +1,4 @@
-# triccount_flutter
+# tricount_flutter
 
 A UI recreation of Tricount made in Flutter.
 This was my step back in Flutter developpement, and a good exercice.
