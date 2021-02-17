@@ -14,38 +14,38 @@ class _BalanceScreenState extends State<BalanceScreen> {
   static const String user = 'Val';
   List<Map> balance = [
     {
-      'giver': 'Romain',
+      'giver': 'Romain', // <=> paidBy
       'receiver': 'Val',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'giver': 'Eren',
       'receiver': 'Romain',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'giver': 'Val',
       'receiver': 'Cyp',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
   ];
 
   List<Map> participants = [
     {
       'name': 'Val',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'name': 'Eren',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'name': 'Romain',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'name': 'Cyp',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
   ];
 
@@ -96,7 +96,7 @@ class _BalanceScreenState extends State<BalanceScreen> {
           ReimbursementCard(
             giver: '${balance[0]['giver']}',
             receiver: '${balance[0]['receiver']}',
-            cost: 33.48,
+            toPay: 33.48,
             user: user,
           ), //TODO: Make Variable
           Container(
@@ -126,7 +126,7 @@ class _BalanceScreenState extends State<BalanceScreen> {
                   return ReimbursementCard(
                     giver: '${balance[index]['giver']}',
                     receiver: '${balance[index]['receiver']}',
-                    cost: balance[index]['cost'],
+                    toPay: balance[index]['toPay'],
                     user: user,
                   );
                 }),
@@ -143,14 +143,14 @@ class ReimbursementCard extends StatefulWidget {
     Key key,
     this.giver,
     this.receiver,
-    this.cost,
+    this.toPay,
     this.user,
   }) : super(key: key);
 
   String giver;
   String receiver;
   String user;
-  double cost;
+  double toPay;
   @override
   _ReimbursementCardState createState() => _ReimbursementCardState();
 }
@@ -206,7 +206,7 @@ class _ReimbursementCardState extends State<ReimbursementCard> {
                         Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Text(
-                            '€${widget.cost}',
+                            '€${widget.toPay}',
                             style: TextStyle(
                               fontSize: 17,
                               color: Colors.grey[800],
@@ -313,7 +313,7 @@ class BalanceParticipant extends StatelessWidget {
                 children: [
                   Text('${participants[index]['name']}'),
                   Text(
-                      '${NumberFormat.currency(name: '€').format(participants[index]['cost'])}'),
+                      '${NumberFormat.currency(name: '€').format(participants[index]['toPay'])}'),
                 ],
               ),
             ),

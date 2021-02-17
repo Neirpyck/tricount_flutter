@@ -12,19 +12,19 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
   List<Map> participants = [
     {
       'name': 'Val',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'name': 'Cyp',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'name': 'Eren',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
     {
       'name': 'Romain',
-      'cost': 1.45,
+      'toPay': 1.45,
     },
   ];
 
@@ -236,7 +236,7 @@ class ListParticipants extends StatelessWidget {
                 children: [
                   Text('${participants[index]['name']}'),
                   Text(
-                      '${NumberFormat.currency(name: '€').format(participants[index]['cost'])}'),
+                      '${NumberFormat.currency(name: '€').format(participants[index]['toPay'])}'),
                 ],
               ),
             ),
